@@ -1,0 +1,789 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #000;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header/Navbar */
+  .site-header {
+    background-color: transparent;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid white;
+  }
+  
+  .site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+  
+  .logo a {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  
+  .logo-icon {
+    margin-right: 10px;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+  
+  .main-nav ul li a {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .main-nav ul li a:hover {
+    color: #e91e63;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  
+
+
+/* Container for the dropdown */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Dropdown base */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Agent's name (non-clickable) */
+.dropbtn {
+  background-color: transparent; /* No background for the name */
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none; /* No border for the name */
+  padding: 10px 16px;
+  cursor: default; /* Ensure it's not clickable */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.dropbtn i {
+  margin-left: 5px; /* Space between name and icon */
+}
+
+/* Profile Picture */
+.profile-picture img {
+  width: 40px; /* Size of the avatar */
+  height: 40px;
+  border-radius: 90%; /* Circular frame */
+  object-fit: cover;
+  border:1px solid #fff; /* White border around profile picture */
+}
+
+/* Dropdown content */
+/* Dropdown button icon color */
+.dropbtn i {
+  color: #fff; /* Dark color for visibility */
+  margin-left: 5px; /* Space between name and icon */
+  transition: color 0.3s ease;
+}
+
+/* Change icon color on hover (optional for better UX) */
+.dropdown:hover .dropbtn i {
+  color: #e91e63; /* Change to a blue color when hovering */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #e91e63;
+  color: #fff;
+}
+
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 60px 0;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .hero h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .search-bar {
+    display: flex;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+  }
+  
+  .search-bar button {
+    padding: 0 30px;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-bar button:hover {
+    background-color: #d81b60;
+  }
+  
+  /* Destinations Section */
+  .destinations-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  .destinations-section h2 {
+    color: #333;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .destinations-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #e91e63;
+  }
+  
+  .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .destination-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .destination-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .destination-info {
+    padding: 20px;
+  }
+  
+  .destination-info h3 {
+    color: #e91e63;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .destination-info p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: none;
+    border: 1px solid #e91e63;
+    color: #e91e63;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+  }
+  
+  .save-btn:hover {
+    background-color: #e91e63;
+    color: white;
+  }
+  
+/* Packages Section */
+.packages-section {
+  padding: 80px 0;
+  text-align: center; /* Ensure text is aligned to the left for the section */
+  background-color: #f9f9f9;
+}
+
+.packages-section h4 {
+  color: #333;
+  font-size: 36px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  text-align: center; /* Left align header text */
+}
+
+.packages-section h4::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #e91e63;
+}
+
+/* Ensure .container doesn't override left alignment */
+.container {
+  text-align: center; /* Make sure the container text aligns left */
+}
+
+/* Grid for the packages */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  justify-content: start; /* Align the grid items to the left */
+  text-align: left; /* Ensure all grid items align left */
+}
+
+/* Individual package cards */
+.package-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  justify-content: flex-start; /* Ensure all content stays at the top */
+  text-align: left; /* Align text in the card to the left */
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+}
+
+.package-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Details under each package */
+.package-details {
+  padding-top: 15px;
+  text-align: left; /* Align details to the left */
+  width: 100%; /* Ensure the details container takes full width */
+}
+
+.package-details h4 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #333;
+  text-align: left; /* Ensure the title aligns left */
+}
+
+.package-details p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 16px;
+  text-align: left !important; /* Ensure text aligns left */
+}
+
+
+
+  /* How It Works Section */
+  .how-it-works-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .how-it-works-section h2 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .how-it-works-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #e91e63;
+  }
+  
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+  }
+  
+  .step-number {
+    background-color: #e91e63;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex: 1;
+  }
+  
+  .step-content p {
+    color: #666;
+    line-height: 1.6;
+    flex: 1;
+    font-size: 16px;
+  }
+  
+  .step-image {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+  }
+  
+  .step-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  
+  
+
+  /* Container styling for the section */
+.why-choose-us-section {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+/* The overall layout for the section */
+.why-choose-us-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 40px; /* Spacing between the columns */
+  align-items: flex-start;
+}
+
+/* Left column: Reasons container */
+.reasons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reason {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.reason-number {
+  background-color: #e91e63; /* Blue color for reason number */
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 20%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reason-content p {
+  font-size: 16px;
+  line-height: 2;
+  margin: 0;
+  text-align: justify;
+}
+
+
+/* Right column: Image container */
+.images-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-row {
+  display: flex;
+  gap: 20px; /* Space between the images */
+}
+
+.image-box {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  overflow: hidden;
+  border-radius: 8px; /* Optional: Rounded corners */
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fill the box without distortion */
+  border-radius: 8px; /* Optional: Rounded corners for images */
+}
+
+
+  
+  /* Footer */
+  .site-footer {
+    background-color: #222;
+    color: white;
+    padding: 50px 0 20px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .footer-logo span {
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .footer-logo p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #333;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+  
+  .social-icon:hover {
+    background-color: #e91e63;
+  }
+  
+  .footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #e91e63;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #aaa;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #e91e63;
+  }
+  
+  .contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #aaa;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #aaa;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .site-header .container {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .logo {
+      margin-bottom: 15px;
+    }
+  
+    .main-nav ul {
+      gap: 15px;
+    }
+  
+    .auth-buttons {
+      margin-top: 15px;
+    }
+  
+    .hero h1 {
+      font-size: 36px;
+    }
+  
+    .step-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .step-image {
+      margin-top: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .search-bar {
+      flex-direction: column;
+    }
+  
+    .search-bar input {
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+  
+    .search-bar button {
+      border-radius: 4px;
+    }
+  
+    .hero h1 {
+      font-size: 30px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  
+    .destinations-section h2,
+    .packages-section h2,
+    .how-it-works-section h2 {
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .auth-buttons {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .login-btn,
+    .signup-btn {
+      width: 48%;
+      text-align: center;
+    }
+  
+    .hero h1 {
+      font-size: 24px;
+    }
+  
+    .destinations-section,
+    .packages-section,
+    .how-it-works-section {
+      padding: 50px 0;
+    }
+  
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    min-width: 160px;
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content button {
+    background: none;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+.dropdown-content button:hover {
+    background-color: #ddd;
+}

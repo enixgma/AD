@@ -1,0 +1,669 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #000;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header/Navbar */
+  .site-header {
+    background-color: transparent;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid white;
+  }
+  
+  .site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+  
+  .logo a {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  
+  .logo-icon {
+    margin-right: 10px;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+  
+  .main-nav ul li a {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .main-nav ul li a:hover {
+    color: #e91e63;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 1000;
+    display: none;
+  }
+  
+  .dropdown-menu a {
+    color: black;
+    padding: 10px 16px;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #e91e63;
+    color: white;
+  }
+  
+  /* Show dropdown on hover */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .login-btn,
+.signup-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 16px;
+
+  color: white !important;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  min-width: 120px;
+}
+  
+.auth-buttons .login-btn {
+  background-color: #e91e63 !important;
+}
+.login-btn {
+  border: 1px solid white !important;
+  background-color: transparent;
+}
+
+.login-btn:hover {
+  background-color: #d81b60 !important;
+}
+.signup-btn {
+  border: transparent;
+  background-color: transparent;
+}
+
+.signup-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 60px 0;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .hero h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .search-bar {
+    display: flex;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+  }
+  
+  .search-bar button {
+    padding: 0 30px;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-bar button:hover {
+    background-color: #d81b60;
+  }
+  
+  /* Destinations Section */
+  .destinations-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  .destinations-section h2 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .destinations-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #e91e63;
+  }
+  
+  .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .destination-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .destination-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .destination-info {
+    padding: 20px;
+  }
+  
+  .destination-info h3 {
+    color: #e91e63;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .destination-info p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: none;
+    border: 1px solid #e91e63;
+    color: #e91e63;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+  }
+  
+  .save-btn:hover {
+    background-color: #e91e63;
+    color: white;
+  }
+  
+/* Packages Section */
+.packages-section {
+  padding: 80px 0;
+  text-align: left; /* Ensure text is aligned to the left for the section */
+  background-color: #f9f9f9;
+}
+
+.packages-section h4 {
+  color: #333;
+  font-size: 36px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  text-align: left; /* Left align header text */
+}
+
+.packages-section h4::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #e91e63;
+}
+
+/* Ensure .container doesn't override left alignment */
+.container {
+  text-align: left; /* Make sure the container text aligns left */
+}
+
+/* Grid for the packages */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  justify-content: start; /* Align the grid items to the left */
+  text-align: left; /* Ensure all grid items align left */
+}
+
+/* Individual package cards */
+.package-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  justify-content: flex-start; /* Ensure all content stays at the top */
+  text-align: left; /* Align text in the card to the left */
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+}
+
+.package-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Details under each package */
+.package-details {
+  padding-top: 15px;
+  text-align: left; /* Align details to the left */
+  width: 100%; /* Ensure the details container takes full width */
+}
+
+.package-details h4 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #333;
+  text-align: left; /* Ensure the title aligns left */
+}
+
+.package-details p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 16px;
+  text-align: left !important; /* Ensure text aligns left */
+}
+
+
+
+  
+  
+  
+
+  /* How It Works Section */
+  .how-it-works-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .how-it-works-section h2 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .how-it-works-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #e91e63;
+  }
+  
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+  }
+  
+  .step-number {
+    background-color: #e91e63;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex: 1;
+  }
+  
+  .step-content p {
+    color: #666;
+    line-height: 1.6;
+    flex: 1;
+    font-size: 16px;
+  }
+  
+  .step-image {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+  }
+  
+  .step-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Footer */
+  .site-footer {
+    background-color: #222;
+    color: white;
+    padding: 50px 0 20px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .footer-logo span {
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .footer-logo p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #333;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+  
+  .social-icon:hover {
+    background-color: #e91e63;
+  }
+  
+  .footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #e91e63;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #aaa;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #e91e63;
+  }
+  
+  .contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #aaa;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #aaa;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .site-header .container {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .logo {
+      margin-bottom: 15px;
+    }
+  
+    .main-nav ul {
+      gap: 15px;
+    }
+  
+    .auth-buttons {
+      margin-top: 15px;
+    }
+  
+    .hero h1 {
+      font-size: 36px;
+    }
+  
+    .step-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .step-image {
+      margin-top: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .search-bar {
+      flex-direction: column;
+    }
+  
+    .search-bar input {
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+  
+    .search-bar button {
+      border-radius: 4px;
+    }
+  
+    .hero h1 {
+      font-size: 30px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  
+    .destinations-section h2,
+    .packages-section h2,
+    .how-it-works-section h2 {
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .auth-buttons {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .login-btn,
+    .signup-btn {
+      width: 48%;
+      text-align: center;
+    }
+  
+    .hero h1 {
+      font-size: 24px;
+    }
+  
+    .destinations-section,
+    .packages-section,
+    .how-it-works-section {
+      padding: 50px 0;
+    }
+  
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
